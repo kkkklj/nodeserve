@@ -23,14 +23,14 @@ app.use(bodyParser.urlencoded({
   limit: '1024kb'
 }));
 app.use(cors({
-  origin:[config.geturl.url+':5000'],  //指定接收的地址
+  origin:[config.geturl.url+':8080'],  //指定接收的地址
   methods:['GET','POST'],  //指定接收的请求类型
   alloweHeaders:['Content-Type','Authorization']  //指定header
 }))
 app.all('*', (req, res, next) => {
   // *: 任何域都可访问
   // res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Origin", config.geturl.url+":5000");
+  res.header("Access-Control-Allow-Origin", config.geturl.url+":8080");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
   //该字段可选。它的值是一个布尔值，表示是否允许发送Cookie。默认情况下，Cookie不包括在CORS请求之中。设为true，即表示服务器明确许可，Cookie可以包含在请求中，一起发给服务器。这个值也只能设为true，如果服务器不要浏览器发送Cookie，删除该字段即可
