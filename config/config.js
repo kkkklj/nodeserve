@@ -7,7 +7,7 @@ exports.mysqlOptions = {
   user: 'root',
 
   //数据库登录密码
-  password: '859701643',
+  password: 'xxx',
 
   //数据库连接地址
   host: 'localhost',
